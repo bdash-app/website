@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 span {
+  display: block;
+  font-size: 42px;
+  font-style: italic;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.InstallationTable {
+  border-collapse: collapse;
+}
+
+.InstallationTable td,
+.InstallationTable th {
+  border: 1px solid #CCC;
+}

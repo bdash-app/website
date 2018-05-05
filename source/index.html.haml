@@ -11,17 +11,16 @@
         %img{ src: './icon.png', width: '100'}
         %span Bdash
     %h2 Downloads
-    %p version: #{config[:bdash_version]}
     %ul
       %li
-        %a{ href: "#" }
+        %a{ href: download_url_for(:mac) }
           %i.fab.fa-apple
-          %span macOS (.dmg)
+          %span macOS #{download_file_name_for(:mac)}
       %li
-        %a{ href: "#" }
-          %i.fab.fa-windows>
-          %span Windows (.exe)
+        %a{ href: download_url_for(:windows) }
+          %i.fab.fa-windows
+          %span Windows #{download_file_name_for(:windows)}
       %li
-        %a{ href: "#" }
-          %i.fab.fa-linux>
-          %span Linux (.AppImage)
+        %a{ href: download_url_for(:linux) }
+          %i.fab.fa-linux
+          %span Linux #{download_file_name_for(:linux)}

@@ -3,7 +3,8 @@
   %head
     %meta{ charset: 'utf-8' }
     %title Bdash
-    %link{ rel: 'stylesheet', crossorigin: 'anonymous', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9' }
+    %link{ rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', integrity: 'sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB', crossorigin: 'anonymous' }
+    %link{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' }
     %link{ rel: 'stylesheet', href: './app.css' }
   %body
     %header
@@ -13,14 +14,14 @@
     %h2 Downloads
     %ul
       %li
-        %a{ href: download_url_for(:mac) }
+        %a.btn.btn-success{ href: download_url_for(:mac) }
           %i.fab.fa-apple
           %span macOS #{download_file_name_for(:mac)}
       %li
-        %a{ href: download_url_for(:windows) }
+        %a.btn.btn-success{ href: download_url_for(:windows) }
           %i.fab.fa-windows
           %span Windows #{download_file_name_for(:windows)}
       %li
-        %a{ href: download_url_for(:linux) }
+        %a.btn.btn-success{ href: download_url_for(:linux) }
           %i.fab.fa-linux
           %span Linux #{download_file_name_for(:linux)}

@@ -10,18 +10,17 @@
     %header
       %h1
         %img{ src: './icon.png', width: '100'}
-        %span Bdash
     %h2 Downloads
-    %ul
+    %ul.downloads
       %li
-        %a.btn.btn-success{ href: download_url_for(:mac) }
+        %a.btn.btn-primary{ href: download_url_for(:mac) }
           %i.fab.fa-apple
           %span macOS #{download_file_name_for(:mac)}
       %li
-        %a.btn.btn-success{ href: download_url_for(:windows) }
+        %a.btn.btn-primary{ href: download_url_for(:windows) }
           %i.fab.fa-windows
           %span Windows #{download_file_name_for(:windows)}
       %li
-        %a.btn.btn-success{ href: download_url_for(:linux) }
+        %a.btn.btn-primary{ href: download_url_for(:linux) }
           %i.fab.fa-linux
           %span Linux #{download_file_name_for(:linux)}

@@ -8,19 +8,18 @@
     %link{ rel: 'stylesheet', href: './app.css' }
   %body
     %header
-      %h1
-        %img{ src: './icon.png', width: '100'}
-    %h2 Downloads
-    %ul.downloads
-      %li
-        %a.btn.btn-primary{ href: download_url_for(:mac) }
-          %i.fab.fa-apple
-          %span macOS #{download_file_name_for(:mac)}
-      %li
-        %a.btn.btn-primary{ href: download_url_for(:windows) }
-          %i.fab.fa-windows
-          %span Windows #{download_file_name_for(:windows)}
-      %li
-        %a.btn.btn-primary{ href: download_url_for(:linux) }
-          %i.fab.fa-linux
-          %span Linux #{download_file_name_for(:linux)}
+      %nav
+        %a{ href: 'https://github.com/bdash-app/bdash ' }
+          %i.fab.fa-github
+          %span GitHub
+    %main
+      .main_inner
+        %h1
+          %img{ src: './icon.png', width: '100'}
+          %span.title Bdash
+        %div.description Simple SQL Client for lightweight data analysis.
+        .download_btn
+          %a.btn.btn-success{ href: download_url_for(:mac) }
+            %div Download For macOS
+            %div #{download_file_name_for(:mac)}
+        %img.main_capture{ src: './capture.png', alt: 'Bdash Capture' }

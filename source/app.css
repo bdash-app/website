@@ -2,22 +2,57 @@ body {
   font-family: sans-serif;
 }
 
+header {
+  background-color: #EFEFEF;
+}
+
+header nav {
+  width: 820px;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 16px;
+  text-align: right;
+}
+
+header nav a {
+  color: #000;
+}
+
+header nav a:hover {
+  text-decoration: none;
+}
+
+main {
+  color: #f1f1f1;
+  background-color: #384677;
+}
+
+.main_inner {
+  width: 820px;
+  margin: 0 auto;
+  position: relative;
+  padding: 100px 0 200px;
+}
+
 h1 {
-  text-align: center;
-  margin: 30px 0;
+  font-family: Helvetica Neue;
+  font-size: 52px;
 }
 
-h2 {
-  text-align: center;
-  margin: 30px 0;
+.description {
+  margin-top: 30px;
+  font-size: 20px;
 }
 
-.downloads {
-  text-align: center;
+.download_btn {
+  position: absolute;
+  right: 10px;
+  top: 110px;
 }
 
-.downloads li {
-  display: inline-block;
-  list-style: none;
-  margin: 0 5px;
+.main_capture {
+  width: 840px;
+  position: absolute;
+  bottom: -380px;
+  margin: 0 auto;
 }

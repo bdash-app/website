@@ -52,6 +52,7 @@ h1 {
 
 .main_capture {
   width: 840px;
+  height: 534px;
   position: absolute;
   bottom: -380px;
   margin: 0 auto;

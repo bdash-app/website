@@ -3,7 +3,6 @@
   %head
     %meta{ charset: 'utf-8' }
     %title Bdash
-    %link{ rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', integrity: 'sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB', crossorigin: 'anonymous' }
     %link{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' }
     %link{ rel: 'stylesheet', href: './app.css' }
   %body
@@ -18,8 +17,63 @@
           %img{ src: './icon.png', width: '100'}
           %span.title Bdash
         %div.description Simple SQL Client for lightweight data analysis.
-        .download_btn
-          %a.btn.btn-success{ href: download_url_for(:mac) }
-            %div Download For macOS
-            %div #{download_file_name_for(:mac)}
+        .download{ hidden: true }
+          %a.download_btn{ href: download_url_for(:mac) }
+            %div
+              %span Download for
+              %span.download_platform= platform_label_for(:mac)
+            %div.download_filename= download_file_name_for(:mac)
+          %div.download_select
+            %span Select other platform
+            %i.fas.fa-caret-down
+          %ul.download_list{ hidden: true }
+            %li.selected{ data: { href: download_url_for(:mac), filename: download_file_name_for(:mac) } }= platform_label_for(:mac)
+            %li{ data: { href: download_url_for(:windows), filename: download_file_name_for(:windows) } }= platform_label_for(:windows)
+            %li{ data: { href: download_url_for(:linux), filename: download_file_name_for(:linux) } }= platform_label_for(:linux)
         %img.main_capture{ src: './capture.png', alt: 'Bdash Capture' }
+    :javascript
+      (function() {
+        var $download = document.querySelector('.download');
+        var $list = document.querySelector('.download_list');
+        var $listItems = document.querySelectorAll('.download_list li');
+        var $btn = document.querySelector('.download_btn');
+        var $platform = document.querySelector('.download_platform');
+        var $filename = document.querySelector('.download_filename');
+        var $select = document.querySelector('.download_select');
+        var platform = navigator.platform;
+
+        function selectItem(el) {
+          $btn.href = el.getAttribute('data-href');
+          $platform.textContent = el.textContent;
+          $filename.textContent = el.getAttribute('data-filename');
+          [].forEach.call($listItems, function(el) {
+            el.removeAttribute('class');
+          });
+          el.setAttribute('class', 'selected');
+        }
+
+        [].forEach.call($listItems, function(el) {
+          el.addEventListener('click', function() {
+            selectItem(el);
+          });
+        });
+
+        $select.addEventListener('click', function(e) {
+          e.stopPropagation();
+          $list.hidden = !$list.hidden;
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!$list.hidden) {
+            $list.hidden = true;
+          }
+        });
+
+        if (platform.indexOf('Win') !== -1) {
+          $listItems[1].click();
+        } else if (platform.indexOf('Linux') !== -1) {
+          $listItems[2].click();
+        }
+
+        $download.hidden = false;
+      })();

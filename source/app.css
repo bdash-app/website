@@ -1,5 +1,6 @@
 body {
-  font-family: sans-serif;
+  font-family: Helvetica Neue, sans-serif;
+  margin: 0;
 }
 
 header {
@@ -16,10 +17,11 @@ header nav {
 
 header nav a {
   color: #000;
+  text-decoration: none;
 }
 
 header nav a:hover {
-  text-decoration: none;
+  color: #384677;
 }
 
 main {
@@ -31,29 +33,87 @@ main {
   width: 820px;
   margin: 0 auto;
   position: relative;
-  padding: 100px 0 200px;
+  padding: 60px 0 160px;
 }
 
 h1 {
-  font-family: Helvetica Neue;
   font-size: 52px;
 }
 
+h1 img {
+  vertical-align: middle;
+}
+
 .description {
-  margin-top: 30px;
   font-size: 20px;
+  margin-top: 30px;
+}
+
+.download {
+  position: absolute;
+  right: 10px;
+  top: 105px;
 }
 
 .download_btn {
+  display: inline-block;
+  background-color: #4e9c2c;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.download_btn:hover {
+  background-color: #5f9c44;
+}
+
+.download_filename {
+  font-size: 14px;
+  color: #e2e2e2;
+}
+
+.download_select {
+  font-size: 13px;
+  color: #CCC;
+  margin-top: 15px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.download_select:hover {
+  color: #EFEFEF;
+}
+
+.download_list {
+  width: 120px;
+  font-size: 14px;
   position: absolute;
-  right: 10px;
-  top: 110px;
+  right: 0;
+}
+
+.download_list li {
+  background-color: #EFEFEF;
+  color: #666;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+
+.download_list li:hover,
+.download_list li.selected {
+  background-color: #4e9c2c;
+  color: #FFF;
 }
 
 .main_capture {
   width: 840px;
   height: 534px;
   position: absolute;
-  bottom: -380px;
+  bottom: -440px;
   margin: 0 auto;
 }

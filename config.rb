@@ -1,6 +1,7 @@
 set :layout, false
 
-config[:bdash_version] = `curl -s -I https://github.com/bdash-app/bdash/releases/latest | grep 'Location:'`.strip.slice(/[\d.]+\z/)
+config[:bdash_version] = `curl -s -I https://github.com/bdash-app/bdash/releases/latest | grep 'Location:'`.strip.slice(/\d+\.\d+\.\d+\z/)
+raise 'Invalid version' unless /\A\d+\.\d+\.\d+\z/ === config[:bdash_version]
 
 helpers do
   def platform_label_for(platform)

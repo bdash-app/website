@@ -1,3 +1,9 @@
 [build]
 command = "bundle exec middleman build"
 publish = "build/"
+
+[[redirects]]
+  from = "/download/*"
+  to = "https://github.com/bdash-app/bdash/releases/download/:splat"
+  status = 200
+  force = true

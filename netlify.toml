@@ -4,6 +4,6 @@ publish = "build/"
 
 [[redirects]]
   from = "/download/*"
-  to = "https://github.com/bdash-app/bdash/releases/download/:splat"
+  to = "https://s3-ap-northeast-1.amazonaws.com/bdash-release/:splat"
   status = 200
   force = true

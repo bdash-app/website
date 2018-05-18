@@ -1,9 +1,3 @@
 [build]
 command = "bundle exec middleman build"
 publish = "build/"
-
-[[redirects]]
-  from = "/download/*"
-  to = "https://bdash.global.ssl.fastly.net/:splat"
-  status = 200
-  force = true

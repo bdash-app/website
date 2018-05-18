@@ -18,7 +18,7 @@ helpers do
   end
 
   def download_url_for(platform)
-    "/download/v#{bdash_version}/#{download_file_name_for(platform)}"
+    "https://bdash.global.ssl.fastly.net/v#{bdash_version}/#{download_file_name_for(platform)}"
   end
 
   def download_file_name_for(platform)

@@ -4,6 +4,6 @@ publish = "build/"
 
 [[redirects]]
   from = "/download/*"
-  to = "https://s3-ap-northeast-1.amazonaws.com/bdash-release/:splat"
+  to = "https://bdash.global.ssl.fastly.net/:splat"
   status = 200
   force = true

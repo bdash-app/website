@@ -1,9 +1,23 @@
+require 'net/http'
+
 set :layout, false
 
-config[:bdash_version] = `curl -s -I https://github.com/bdash-app/bdash/releases/latest | grep 'Location:'`.strip.slice(/\d+\.\d+\.\d+\z/)
-raise 'Invalid version' unless /\A\d+\.\d+\.\d+\z/ === config[:bdash_version]
-
 helpers do
+  def bdash_version
+    return config[:bdash_version] if config[:bdash_version]
+
+    url = URI.parse('https://github.com/bdash-app/bdash/releases/latest')
+    http = Net::HTTP.new(url.host, url.port).tap {|h| h.use_ssl = true }
+    res = http.start { http.get(url.path) }
+    location = res['location']
+    raise 'Invalid response' unless location
+
+    config[:bdash_version] = res['location'].strip.slice(/\d+\.\d+\.\d+\z/)
+    raise 'Invalid version' unless config[:bdash_version]
+
+    config[:bdash_version]
+  end
+
   def platform_label_for(platform)
     case platform
     when :mac
@@ -32,9 +46,5 @@ helpers do
     else
       raise ArgumentError, "Invalid platform: #{platform}"
     end
-  end
-
-  def bdash_version
-    config[:bdash_version]
   end
 end

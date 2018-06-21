@@ -79,6 +79,6 @@
         $download.hidden = false;
 
         $btn.addEventListener('click', () => {
-          ga('send', 'event', 'download', 'click', $platform.textContent);
+          gtag('event', 'click', { 'event_category': 'download', 'event_label': $platform.textContent });
         });
       })();

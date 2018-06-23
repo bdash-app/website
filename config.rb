@@ -1,7 +1,5 @@
 require 'net/http'
 
-set :layout, false
-
 helpers do
   def bdash_version
     return config[:bdash_version] if config[:bdash_version]

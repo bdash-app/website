@@ -38,7 +38,7 @@ helpers do
     when :mac
       "Bdash-#{bdash_version}.dmg"
     when :windows
-      "Bdash-Setup-#{bdash_version}.exe"
+      "Bdash+Setup+#{bdash_version}.exe"
     when :linux
       "Bdash-#{bdash_version}-x86_64.AppImage"
     else

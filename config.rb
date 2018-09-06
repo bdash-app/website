@@ -30,7 +30,8 @@ helpers do
   end
 
   def download_url_for(platform)
-    "https://bdash.global.ssl.fastly.net/v#{bdash_version}/#{download_file_name_for(platform)}"
+    file_name = CGI.escape(download_file_name_for(platform))
+    "https://bdash.global.ssl.fastly.net/v#{bdash_version}/#{file_name}"
   end
 
   def download_file_name_for(platform)
@@ -38,7 +39,7 @@ helpers do
     when :mac
       "Bdash-#{bdash_version}.dmg"
     when :windows
-      "Bdash+Setup+#{bdash_version}.exe"
+      "Bdash Setup #{bdash_version}.exe"
     when :linux
       "Bdash-#{bdash_version}-x86_64.AppImage"
     else

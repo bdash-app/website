@@ -41,7 +41,7 @@ helpers do
     when :windows
       "Bdash Setup #{bdash_version}.exe"
     when :linux
-      "Bdash-#{bdash_version}-x86_64.AppImage"
+      "Bdash-#{bdash_version}.AppImage"
     else
       raise ArgumentError, "Invalid platform: #{platform}"
     end

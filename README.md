@@ -1,5 +1,3 @@
-# https://bdash.io/
-
 ## Development
 
 ```

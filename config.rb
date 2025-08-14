@@ -37,7 +37,7 @@ helpers do
   def download_file_name_for(platform)
     case platform
     when :mac
-      "Bdash-#{bdash_version}.dmg"
+      "Bdash-#{bdash_version}-universal.dmg"
     when :windows
       "Bdash Setup #{bdash_version}.exe"
     when :linux
